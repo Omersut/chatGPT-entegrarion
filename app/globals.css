@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bodycolor: #ddd;
+  --fontcolor: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bodycolor: #212121;
+    --fontcolor: #fff;
+  }
+}
+
+body {
+  background-color: var(--bodycolor);
+  color: var(--fontcolor);
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  left: 0px;
+  bottom: 4px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  box-shadow: 0 0px 15px #2020203d;
+  background: white url('https://png.pngtree.com/png-clipart/20200321/ourmid/pngtree-hazy-and-beautiful-halo-moon-png-image_2162951.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input:checked+.slider {
+  background-color: #2196f3;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
+  background: white url('https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvcm01MTAtZWxlbWVudC00OS1sMHZwemFzai5wbmc.png?s=0B4BsgCTdJm9TDZflLlDuKnqEkPVgSJoWUxljVq8c58');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 24px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.left-area{
+  width: 70%;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 10px;
+  max-height: 600px;
+  overflow-y: scroll;
+}
+
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: auto;
+  width: 100%;
+  margin: auto;
+  border-radius: 8px;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: #007bff;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  max-width: 70%;
+  text-align: right;
+}
+
+.assistant-message {
+  align-self: flex-start;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  max-width: 70%;
+}
+
+/* Chat.css */
+
+/* Input alanı stillemesi */
+.input-container{
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+.input-container form{
+  width: 80%;
+}
+.user-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
